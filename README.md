@@ -5,6 +5,10 @@
 
 This work extends upon our previous work ``Share or Not Share? Towards the Practicability of Deep Models for Unsupervised Anomaly Detection in Modern Online Systems'' at the 33rd IEEE International Symposium on Software Reliability Engineering (ISSRE 2022), which is also honored to get the best paper award in the research track.
 
+## Note
+
+We are currently refactoring the code including a rename and new techniques of our work. If you find any issues, please feel free to e-mail us.
+
 ## Start
 
 #### Clone the repository
@@ -31,4 +35,4 @@ pip install -r requirements.txt
 
 #### Running an Example
 
-An example using the CTF_data is provided in the notebook `example_pretrain.ipynb` and `example_align.ipynb`.
+An example using the CTF_data is provided in the notebook `example.ipynb`.
