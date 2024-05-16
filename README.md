@@ -7,7 +7,7 @@ This work extends upon our previous work ``Share or Not Share? Towards the Pract
 
 ## Note
 
-We are currently refactoring the code including a rename and new techniques of our work. If you find any issues, please feel free to e-mail us.
+We are currently refactoring the code, including a library rename and a more easy-to-use interface to apply new techniques of our work. If you find any issues, please feel free to e-mail us.
 
 ## Start
 
