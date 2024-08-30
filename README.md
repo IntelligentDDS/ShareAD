@@ -36,7 +36,6 @@ The project structure is as follows:
     ├── datasets_for_TencentData.py: dataset loader for Tencent Data
     ├── datasets.py: dataset loader for CTF Data
     ├── __init__.py: init file
-    ├── requirements.txt: python dependencies
     ├── soft_dtw_cuda.py: soft dtw cuda implementation, a choice of loss function that can be used in the model
     ├── thresholding.py: thresholding utils
     └── transformer_ad.py: our sharead model for anomaly detection, including pre-training and alignment

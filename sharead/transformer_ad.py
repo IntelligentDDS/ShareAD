@@ -15,13 +15,13 @@ import IPython
 import matplotlib.pyplot as plt
 #from sklearn.preprocessing import StandardScaler
 import torch.cuda
-from numba import jit
+#from numba import jit
 from torch.autograd import Function
 from torch.optim.lr_scheduler import StepLR
-from numba import cuda
+#from numba import cuda
 import math
 import robust_loss_pytorch
-from .soft_dtw_cuda import SoftDTW
+#from .soft_dtw_cuda import SoftDTW
 from torch.utils.tensorboard import SummaryWriter
 
 from .algorithm_utils import Algorithm, PyTorchUtils
@@ -227,7 +227,7 @@ class Transformer_AD(Algorithm, PyTorchUtils):
         return outputs
 
 
-    def align(self, dataset: Dataset, feedback_labels: dict, feedback_amount: float=0.3, seed: int=0, ):
+    def align(self, dataset: Dataset, feedback_labels: dict, feedback_amount: float=0.3, seed: int=0):
         condition_embedding = []
         threshold_embedding = []
         mac_ids = dataset.mac_ids
@@ -272,6 +272,13 @@ class Transformer_AD(Algorithm, PyTorchUtils):
         # or we can load these into nn.Embedding using nn.Embedding.from_pretrained
         self.condition_embedding = np.array(condition_embedding)
         self.threshold_embedding = np.array(threshold_embedding)
+
+    def align_predict(self, pred, dataset, mac_id):
+        index = dataset.mac_ids.index(mac_id)
+        pred = np.mean(pred, axis = 2)[1:,-1]-np.max(np.mean(pred, axis = 2)[1:,-self.condition_embedding[index]:-1], axis= 1)
+        align_threshold = self.threshold_embedding[index]
+        pred = pred > align_threshold
+        return pred
 
 
 
@@ -435,14 +442,17 @@ class Transformer_AD(Algorithm, PyTorchUtils):
         if not test_epochs:
             self.ed.load_state_dict(torch.load('check_points/'+self.name+'_'+str(self.gpu)+'_'+'checkpoint.pt'))
     
-    def load(self, sfa_dim, file: str=None):
+    def load(self, sfa_dim, file: str=None, map_location=None):
         if self.ed is None:
             self.ed = RelationNet(input_dim=self.sequence_length, hidden_dim=self.hidden_dim, seed=self.seed, gpu=self.gpu, use_sfa=self.use_sfa, no_longterm=self.no_longterm, no_featerm=self.no_featerm, sfa_dim=sfa_dim, noisy_rate=self.noisy_rate)
             self.to_device(self.ed)
         if file is None:
             self.ed.load_state_dict(torch.load('check_points/'+self.name+'_'+str(self.gpu)+'_'+'checkpoint.pt'))
         else:
-            self.ed.load_state_dict(torch.load(file))
+            if map_location is None:
+                self.ed.load_state_dict(torch.load(file))
+            else:
+                self.ed.load_state_dict(torch.load(file, map_location=map_location))
     
     def predict(self, dataslices: Dataset, way: str='mse'):
         '''
@@ -645,7 +655,7 @@ class RelationNet(nn.Module, PyTorchUtils):
             self.final_decoder = nn.Linear(sfa_dim * int(dims[0]//hidden_dim), input_dim)
             
         
-        self.sdtw = SoftDTW(use_cuda=True, gamma=0.1)
+        #self.sdtw = SoftDTW(use_cuda=True, gamma=0.1)
         self.mse = nn.MSELoss()
         self.mae = nn.L1Loss()
         self.huber = nn.SmoothL1Loss()
