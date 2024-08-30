@@ -1,6 +1,6 @@
 # ShareAD
 
-This repo provides official code for ''On the Practicability of Deep Learning based Anomaly Detection for Modern Online Systems: A Pre-Train-and-Align Framework''.
+This repo provides official code for ''On the Practicability of Deep Learning based Anomaly Detection for Modern Online Software Systems: A Pre-Train-and-Align Framework''.
 
 
 ## Introduction
