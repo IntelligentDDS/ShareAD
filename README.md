@@ -100,7 +100,7 @@ You can use your own data by following the steps below:
 - Prepare your data in the format like the CTF_data. 
 - Specifically, the data should be stored in a csv/txt file with only the data values separated by ',', and the data of different entities should be stored in different files. In a specific file, the data of each row are metrics from different timestamps, and each column represents different metric of an entity.
 - Put the data in the corresponding folder.
-- Set the datafiles and prefix parameters as the corresponding files and paths when calling MonitorEntityDataset interface to load the data.
+- Set the datafiles and prefix parameters as the corresponding files and paths when calling `MonitorEntityDataset` interface to load the data.
 - Use the our train and alignment functions to train and align the model on your data.
 
 ## Citation
