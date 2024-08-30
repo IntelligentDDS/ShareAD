@@ -70,6 +70,28 @@ A demo of Pre-training using the CTF_data is provided in the notebook `demo/exam
 
 A demo of Alignment using the CTF_data is provided in the notebook `demo/example_alignment.ipynb`.
 
+### Parameters Setting
+
+The parameters of the model can be set in the `demo/example_pretrain.ipynb` and `demo/example_alignment.ipynb` files, or when you use our library in your code. The parameters mainly include:
+
+#### For Data Loading
+
+- `datafiles`: the data files to be loaded
+- `prefix`: the path of the data files
+- `sequence_len`: the sliding window sequence length
+
+#### For Pre-training
+
+- `lr`: the learning rate of the model
+- `num_epochs`: the number of epochs for pre-training
+- `sequence_len`: the sliding window sequence length
+- `z_dim`: the dimension of the latent space
+- `batch_size`: the batch size of the model
+
+#### For Alignment
+
+- `feedback_labels`: the feedback label of the operator for the alignment, recorded in a dictionary
+- `feedback_amount`: the amount of feedback for the alignment, denoted as a percentage of the total data
 
 
 ## Use on Your Own Data
