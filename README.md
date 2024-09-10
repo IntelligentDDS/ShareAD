@@ -43,9 +43,10 @@ The project structure is as follows:
 
 ## Datasets
 
-You can get the public datasets from:
+You can get the datasets from:
 
 * CTF_data: <https://github.com/NetManAIOps/CTF_data>
+* TC_data <https://drive.google.com/file/d/1U8DdiM9uCIJHT7_HiQH70F5v57kwWbDL>
 * SMD: <https://github.com/NetManAIOps/OmniAnomaly>
 * JS_D2+D3: <https://github.com/NetManAIOps/JumpStarter>
 
