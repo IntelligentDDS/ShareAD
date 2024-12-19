@@ -1,12 +1,13 @@
 # ShareAD
 
-This repo provides official code for ''On the Practicability of Deep Learning based Anomaly Detection for Modern Online Software Systems: A Pre-Train-and-Align Framework''.
+ShareAD is the first framework to perform model pre-training on **multivariate** time series and provide **anomaly detection alignment** support for software engineering operation scenarios.
 
+* Extended Vesion Paper: ''On the Practicability of Deep Learning based Anomaly Detection for Modern Online Software Systems: A Pre-Train-and-Align Framework'', to appear in TOSEM
+* Conference Version Paper: ``Share or Not Share? Towards the Practicability of Deep Models for Unsupervised Anomaly Detection in Modern Online Systems'' at the 33rd IEEE International Symposium on Software Reliability Engineering (ISSRE 2022), which is also honored to get the best paper award in the research track.
+
+This repo contains the official code of ShareAD.
 
 ## Introduction
-
-This work extends upon our previous work ``Share or Not Share? Towards the Practicability of Deep Models for Unsupervised Anomaly Detection in Modern Online Systems'' at the 33rd IEEE International Symposium on Software Reliability Engineering (ISSRE 2022), which is also honored to get the best paper award in the research track.
-
 
 ![image](https://github.com/IntelligentDDS/ShareAD/blob/main/img/workflow_of_anomaly_detection_ours.png)
 
