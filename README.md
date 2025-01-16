@@ -109,6 +109,23 @@ You can use your own data by following the steps below:
 If you find our work useful in your research, please consider citing our paper:
 
 ```
+@article{10.1145/3712195,
+author = {He, Zilong and Chen, Pengfei and Zheng, Zibin},
+title = {On the Practicability of Deep Learning based Anomaly Detection for Modern Online Software Systems: A Pre-Train-and-Align Framework},
+year = {2025},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1049-331X},
+url = {https://doi.org/10.1145/3712195},
+doi = {10.1145/3712195},
+note = {Just Accepted},
+journal = {ACM Trans. Softw. Eng. Methodol.},
+month = jan,
+keywords = {anomaly detection, deep learning, pre-training, preference alignment, online software systems}
+}
+```
+
+```
 @inproceedings{DBLP:conf/issre/HeCH22,
   author       = {Zilong He and
                   Pengfei Chen and
