@@ -1,5 +1,7 @@
 # ShareAD
 
+![image](./SHAREAD.png)
+
 ShareAD is the first framework to perform model pre-training on **multivariate** time series and provide **anomaly detection alignment** support for software engineering operation scenarios.
 
 * Extended Vesion Paper: ''On the Practicability of Deep Learning based Anomaly Detection for Modern Online Software Systems: A Pre-Train-and-Align Framework'', to appear in ACM Transactions on Software Engineering and Methodology (TOSEM).
